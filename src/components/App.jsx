@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { Grid, Row } from "react-bootstrap";
+import { Route, Switch, Redirect } from "react-router-dom";
 
+import Layout from "./Layout";
+import { ROUTES } from "../constants/Routes";
 import CreateProductFormContainer from "./CreateProductFormContainer";
 import ProductCatalog from "./ProductCatalog";
 
@@ -29,20 +31,30 @@ class App extends Component {
         const { products } = this.state;
 
         return (
-            <Grid>
-                <Row>
-                    <CreateProductFormContainer
-                        onCreateProduct={product => this.createProduct(product)}
+            <Layout>
+                <Switch>
+                    <Redirect exact from={ROUTES.HOME} to={ROUTES.CREATE} />
+                    <Route
+                        path={ROUTES.CREATE}
+                        component={() => (
+                            <CreateProductFormContainer
+                                onCreateProduct={product =>
+                                    this.createProduct(product)}
+                            />
+                        )}
                     />
-                </Row>
-                <hr />
-                <Row>
-                    <ProductCatalog
-                        products={products}
-                        onDeleteProduct={id => this.deleteProductWithId(id)}
+                    <Route
+                        path={ROUTES.CATALOG}
+                        component={() => (
+                            <ProductCatalog
+                                products={products}
+                                onDeleteProduct={id =>
+                                    this.deleteProductWithId(id)}
+                            />
+                        )}
                     />
-                </Row>
-            </Grid>
+                </Switch>
+            </Layout>
         );
     }
 }

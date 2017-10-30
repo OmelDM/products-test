@@ -14,11 +14,11 @@ class App extends Component {
                     <Redirect exact from={ROUTES.HOME} to={ROUTES.CATALOG} />
                     <Route
                         path={ROUTES.CREATE}
-                        component={() => <ProductCreatorContainer />}
+                        component={ProductCreatorContainer}
                     />
                     <Route
                         path={ROUTES.CATALOG}
-                        component={() => <ProductCatalogContainer />}
+                        component={ProductCatalogContainer}
                     />
                 </Switch>
             </Layout>

@@ -27,7 +27,7 @@ const propTypes = {
     }).isRequired
 };
 
-const CreateProductForm = ({
+const ProductForm = ({
     onFormSubmit,
     onNameChange,
     onColorChange,
@@ -76,6 +76,6 @@ const CreateProductForm = ({
     );
 };
 
-CreateProductForm.propTypes = propTypes;
+ProductForm.propTypes = propTypes;
 
-export default CreateProductForm;
+export default ProductForm;

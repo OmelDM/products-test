@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import CreateProductForm from "./CreateProductForm";
+import ProductForm from "./ProductForm";
 import { SUPPORTED_COLORS } from "../constants/SupportedColors";
 
 const INITIAL_STATE = {
@@ -14,7 +14,7 @@ const propTypes = {
     onCreateProduct: PropTypes.func.isRequired
 };
 
-class CreateProductFormContainer extends React.Component {
+class ProductCreator extends React.Component {
     constructor(props) {
         super(props);
 
@@ -61,7 +61,7 @@ class CreateProductFormContainer extends React.Component {
 
     render() {
         return (
-            <CreateProductForm
+            <ProductForm
                 onFormSubmit={this.handleFormSubmit}
                 onNameChange={this.handleNameChange}
                 onColorChange={this.handleColorChange}
@@ -72,6 +72,6 @@ class CreateProductFormContainer extends React.Component {
     }
 }
 
-CreateProductFormContainer.propTypes = propTypes;
+ProductCreator.propTypes = propTypes;
 
-export default CreateProductFormContainer;
+export default ProductCreator;

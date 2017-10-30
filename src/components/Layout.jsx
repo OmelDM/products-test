@@ -1,27 +1,12 @@
 import React from "react";
-import { Grid, Row, Col } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Grid, Row } from "react-bootstrap";
 
-const style = {
-    fontWeight: "bold",
-    color: "red"
-};
+import Navigation from './Navigation';
 
 const Layout = ({ children }) => (
     <Grid>
         <hr />
-        <Row>
-            <Col xs={2} mdOffset={3}>
-                <NavLink to="/catalog" activeStyle={style}>
-                    Catalog
-                </NavLink>
-            </Col>
-            <Col xs={2}>
-                <NavLink to="/create" activeStyle={style}>
-                    Create
-                </NavLink>
-            </Col>
-        </Row>
+        <Navigation />
         <hr />
         <Row>{children}</Row>
     </Grid>

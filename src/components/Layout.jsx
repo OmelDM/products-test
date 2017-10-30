@@ -6,7 +6,7 @@ import Navigation from './Navigation';
 const Layout = ({ children }) => (
     <Grid>
         <hr />
-        <Navigation />
+        <Row><Navigation /></Row>        
         <hr />
         <Row>{children}</Row>
     </Grid>

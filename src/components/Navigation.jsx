@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 import { ROUTES } from "../constants/Routes";
@@ -10,18 +10,15 @@ const style = {
 };
 
 const Navigation = () => (
-    <Row>
-        <Col xs={2} mdOffset={3}>
-            <NavLink to={ROUTES.CATALOG} activeStyle={style}>
-                Catalog
-            </NavLink>
-        </Col>
-        <Col xs={2}>
-            <NavLink to={ROUTES.CREATE} activeStyle={style}>
-                Create
-            </NavLink>
-        </Col>
-    </Row>
+    <Col xs={12} lg={6} lgOffset={3}>
+        <NavLink to={ROUTES.CATALOG} activeStyle={style}>
+            Catalog
+        </NavLink>
+        {' | '}
+        <NavLink to={ROUTES.CREATE} activeStyle={style}>
+            Create
+        </NavLink>
+    </Col>
 );
 
 export default Navigation;
